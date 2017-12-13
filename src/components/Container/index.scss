@@ -1,0 +1,30 @@
+.basket {
+  display: flex;
+  width: 500px;
+}
+
+.products {
+  width: 50%;
+  margin: 5px;
+  background-color: white;
+
+}
+
+.total {
+  width: 50%;
+  margin: 5px;
+  background-color: white;
+
+}
+
+.product {
+  color: black;
+  border-top: 1px solid grey;
+  width: 50%;
+}
+
+.price {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}

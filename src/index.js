@@ -1,7 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Boilerplate extends React.Component{
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './components/reducers';
+import Container from './components/Container';
+
+import './index.scss'
+const store = createStore(
+  reducer, /* preloadedState, */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+function listener() {
+  console.log(store.getState(), 'store state');
+}
+
+store.subscribe(listener)
+
+class Component extends React.Component{
 
   constructor(props) {
     super(props);
@@ -12,12 +28,12 @@ class Boilerplate extends React.Component{
 
   render(){
     return (
-       <div>
-       Working :)
-       </div>
+      <Provider store={store}>
+        <Container />
+      </Provider>
       )
   };
 };
 
-ReactDOM.render(<Boilerplate />,
+ReactDOM.render(<Component />,
     document.getElementById('content'));

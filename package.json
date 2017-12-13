@@ -21,7 +21,7 @@
     "ignore-styles": "^5.0.1",
     "jsdom": "9.11.0",
     "jsdom-global": "2.1.1",
-    "mocha": "^3.2.0",
+    "mocha": "^3.5.3",
     "node-hook": "^0.4.0",
     "node-sass": "^4.2.0",
     "react-addons-test-utils": "^15.4.2",
@@ -51,7 +51,9 @@
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.6",
     "react-router": "^2.8.1",
+    "redux": "^3.7.2",
     "webpack": "^1.12.2",
     "webpack-config": "^6.1.2"
   }
