@@ -28,17 +28,6 @@ const mapDispatchToProps = dispatch => ({
 
 class Container extends React.Component {
 
-  // calculateTotal = () => {
-  //   let totalPrice = [0];
-  //   this.props.basket.map((product) => {
-  //     const price = product.product.price;
-  //     const quantity = product.quantity;
-  //     const total = price * quantity;
-  //     totalPrice.push(total);
-  //   })
-  //   return totalPrice.reduce((a, b) => { return a + b });
-  // }
-
   calculateTotal = () => {
     return this.props.basket.reduce((totalPrice, basketItem) => {
       const price = basketItem.product.price;
@@ -47,16 +36,6 @@ class Container extends React.Component {
       return totalPrice + total
     }, 0)
   }
-
-  // MOVE TO REDUCER ^^^
-  
-  // const options = {test: 'test123', anotherkey: 'ak'}
-  // const options2 = {test12345: 'test123', anotherkey: 'ak'}
-  //
-  // func = ({ test, anotherkey }) => {
-  //   console.log(test);
-  //   console.log(anotherkey);
-  // }
 
   render(){
     return(
