@@ -54,7 +54,7 @@ class Container extends React.Component {
        <div className="basket">
            <div className="products">
              <h1>Basket</h1>
-               {this.props.basket.map((item) => {
+               {this.props.basket.items.map((item) => {
                  return <div className="product">
                           <span className="price">£{item.quantity * item.product.price}</span>
                           <span><button onClick={() => this.props.removeFromBasket(item.product)}>X</button></span>
@@ -69,7 +69,7 @@ class Container extends React.Component {
            <div className="total">
             <h1> Total </h1>
              <span className="label">Sub-total </span>
-             <span className="amount">£{this.calculateTotal()}</span>
+             <span className="amount">£{this.props.basket.total}</span>
              <button>Checkout</button>
            </div>
         </div>
