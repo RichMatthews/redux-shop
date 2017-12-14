@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import reducer from './components/reducers';
 import Container from './components/Container';
 
-import './index.scss'
+import './index.scss';
+
 const store = createStore(
   reducer, /* preloadedState, */
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -15,10 +16,9 @@ function listener() {
   console.log(store.getState(), 'store state');
 }
 
-store.subscribe(listener)
+store.subscribe(listener);
 
-class Component extends React.Component{
-
+class Component extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,14 +26,16 @@ class Component extends React.Component{
     };
   }
 
-  render(){
+  render() {
     return (
       <Provider store={store}>
         <Container />
       </Provider>
-      )
-  };
-};
+    );
+  }
+}
 
-ReactDOM.render(<Component />,
-    document.getElementById('content'));
+ReactDOM.render(
+  <Component />,
+  document.getElementById('content')
+);
