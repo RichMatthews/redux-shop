@@ -20,7 +20,7 @@ class Products extends React.Component {
             <Image image={product.image} />
           </ProductImage>
           <ProductName>
-            Name: {product.name}
+            {product.name}
           </ProductName>
           <ProductPrice>
             <Price salePrice={product.salePrice} price={product.price} />

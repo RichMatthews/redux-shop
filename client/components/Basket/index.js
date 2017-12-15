@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, number } from 'prop-types';
+import { func } from 'prop-types';
 import { BasketContainer,
   BasketProducts,
   BasketProduct,
@@ -37,8 +37,8 @@ class Basket extends React.Component {
               </BasketProductName>
               <BasketProductQuantity>
                 <span className="quantity">Qty {item.quantity}</span>
-                <span><button onClick={() => this.props.increaseQuantity(item)} className="quantity">+</button></span>
-                <span><button onClick={() => this.props.decreaseQuantity(item)} className="quantity">-</button></span>
+                <span><button onClick={() => this.props.increaseQuantity(item)} className="quantityIncrease">+</button></span>
+                <span><button onClick={() => this.props.decreaseQuantity(item)} className="quantityDecrease">-</button></span>
               </BasketProductQuantity>
             </BasketProduct>), this)}
           <button onClick={() => this.props.clearBasket()}>Clear Basket</button>
@@ -58,10 +58,14 @@ Basket.propTypes = {
   increaseQuantity: func,
   decreaseQuantity: func,
   clearBasket: func,
-  removeFromBasket: func,
-  basket: {
-    total: number
-  }
-}
+  removeFromBasket: func
+};
+
+Basket.defaultProps = {
+  increaseQuantity: null,
+  decreaseQuantity: null,
+  clearBasket: null,
+  removeFromBasket: null
+};
 
 export default Basket;

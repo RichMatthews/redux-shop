@@ -4,21 +4,21 @@ const initialState = [
     price: '15.00',
     salePrice: '7.00',
     id: 1,
-    image: '/data/rucksack.jpg'
+    image: '/images/rucksack.jpg'
   },
   {
     name: 'Painting',
     price: '79.00',
     salePrice: '40.00',
     id: 2,
-    image: '/data/rucksack.jpg'
+    image: '/images/rucksack.jpg'
   },
   {
     name: 'Trainers',
     price: '150.00',
     salePrice: '70.00',
     id: 3,
-    image: '/data/rucksack.jpg'
+    image: '/images/rucksack.jpg'
   }
 ];
 
