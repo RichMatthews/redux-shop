@@ -32,12 +32,6 @@
     "chai-friendly/no-unused-expressions": 2,
     "jsx-control-statements/jsx-use-if-tag": 0,
     "react/no-danger": 0,
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": [
-        "./testHelpers/*.js",
-        "./e2e/**/*.js"
-      ]
-    }],
     "react/jsx-filename-extension": ["error", {
       "extensions": [".js", ".jsx"]
     }],

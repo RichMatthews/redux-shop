@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ignore-styles setup.js --compilers js:babel-core/register 'src/**/*.spec.js'",
+    "test": "mocha --require ignore-styles setup.js --compilers js:babel-core/register 'client/**/*.spec.js'",
     "watch": "webpack --watch",
     "start": "node ./server/index.js",
     "lint": "eslint ."
@@ -64,6 +64,7 @@
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.6",
     "react-router": "^2.8.1",
+    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "styled-components": "^2.2.4",
     "webpack": "^1.12.2",
