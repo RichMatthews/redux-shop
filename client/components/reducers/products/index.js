@@ -1,31 +1,57 @@
-const initialState = [
-  {
+const initialState = {
+  products: [{
     name: 'Rucksack',
     price: '15.00',
     salePrice: '7.00',
     id: 1,
-    image: '/images/rucksack.jpg'
+    image: '/images/rucksack.jpg',
+    colorTags: 'green'
   },
   {
     name: 'Painting',
     price: '79.00',
     salePrice: '40.00',
     id: 2,
-    image: '/images/rucksack.jpg'
+    image: '/images/painting.jpg',
+    colorTags: 'black'
   },
   {
-    name: 'Trainers',
-    price: '150.00',
+    name: 'Nike Trainers',
+    price: '175.00',
     salePrice: '70.00',
     id: 3,
-    image: '/images/rucksack.jpg'
-  }
-];
+    image: '/images/nikes.jpg',
+    colorTags: 'green'
+  },
+  {
+    name: 'NB Trainers',
+    price: '150.00',
+    salePrice: '70.00',
+    id: 4,
+    image: '/images/nbs.jpg',
+    colorTags: 'green'
+  }]
+};
+
+const returnMatchingProducts = (product) => (
+  product.colorTags === 'green'
+);
+
+const includedProducts = (products) => (
+  products.map((product) => {
+    if (returnMatchingProducts(product)) {
+      return { ...product };
+    }
+  }).filter((item) => Boolean(item))
+);
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TO_PRODUCTS':
-      const productState = [].concat(state).concat(action.data);
+      let productState = [].concat(state).concat(action.data);
+      return productState;
+    case 'REFINE_SEARCH':
+      productState = { products: includedProducts(state.products) };
       return productState;
     default:
       return state;

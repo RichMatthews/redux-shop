@@ -13,46 +13,48 @@ import { BasketContainer,
 } from './styles';
 import Image from '../Image';
 
-class Basket extends React.Component {
-  render() {
-    return (
-      <BasketContainer>
-        <BasketProducts>
-          <h1>Basket</h1>
-          {this.props.basket.items.map((item) => (
-            <BasketProduct>
-              <BasketProductImage>
-                <Image image={item.product.image} />
-              </BasketProductImage>
-              <PriceAndRemove>
-                <BasketProductPrice>
-                  <span className="price">£{item.quantity * item.product.price}</span>
-                </BasketProductPrice>
-                <BasketProductRemove>
-                  <button onClick={() => this.props.removeFromBasket(item.product)}>X</button>
-                </BasketProductRemove>
-              </PriceAndRemove>
-              <BasketProductName>
-                <p className="name">{item.product.name}</p>
-              </BasketProductName>
-              <BasketProductQuantity>
-                <span className="quantity">Qty {item.quantity}</span>
-                <span><button onClick={() => this.props.increaseQuantity(item)} className="quantityIncrease">+</button></span>
-                <span><button onClick={() => this.props.decreaseQuantity(item)} className="quantityDecrease">-</button></span>
-              </BasketProductQuantity>
-            </BasketProduct>), this)}
-          <button onClick={() => this.props.clearBasket()}>Clear Basket</button>
-        </BasketProducts>
-        <Total>
-          <h1> Total </h1>
-          <span className="label">Sub-total </span>
-          <span className="amount">£{this.props.basket.total}</span>
-          <button>Checkout</button>
-        </Total>
-      </BasketContainer>
-    );
-  }
-}
+const Basket = ({
+  basket,
+  increaseQuantity,
+  decreaseQuantity,
+  removeFromBasket,
+  clearBasket
+}) => (
+  <BasketContainer>
+    <BasketProducts>
+      <h1>Basket</h1>
+      {basket.items.map((item) => (
+        <BasketProduct>
+          <BasketProductImage>
+            <Image image={item.product.image} className="basketItemImage"/>
+          </BasketProductImage>
+          <PriceAndRemove>
+            <BasketProductPrice>
+              <span className="basketItemPrice">£{item.quantity * item.product.price}</span>
+            </BasketProductPrice>
+            <BasketProductRemove>
+              <button onClick={() => removeFromBasket(item.product)}>X</button>
+            </BasketProductRemove>
+          </PriceAndRemove>
+          <BasketProductName>
+            <p className="basketItemName">{item.product.name}</p>
+          </BasketProductName>
+          <BasketProductQuantity>
+            <span className="basketItemQuantity">Qty {item.quantity}</span>
+            <span><button onClick={() => increaseQuantity(item)} className="quantityIncrease">+</button></span>
+            <span><button onClick={() => decreaseQuantity(item)} className="quantityDecrease">-</button></span>
+          </BasketProductQuantity>
+        </BasketProduct>), this)}
+      <button onClick={() => clearBasket()}>Clear Basket</button>
+    </BasketProducts>
+    <Total>
+      <h1> Total </h1>
+      <span className="label"> Sub-total </span>
+      <span className="amount">£{basket.total}</span>
+      <button>Checkout</button>
+    </Total>
+  </BasketContainer>
+);
 
 Basket.propTypes = {
   increaseQuantity: func,

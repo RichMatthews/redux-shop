@@ -3,11 +3,11 @@ const initialState = {
   total: 0
 };
 
-const isProductInBasket = (items, action) => {
-  return items.some((basketItem) => {
-    return basketItem.product.id === action.data.product.id
-  });
-};
+const isProductInBasket = (items, action) => (
+  items.some((basketItem) => (
+    basketItem.product.id === action.data.product.id
+  ))
+);
 
 const calculateTotal = (items) => {
   return items.reduce((totalPrice, basketItem) => {
@@ -65,26 +65,34 @@ const decreaseItemQuantitiy = (items, action) => items.map((product) => {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_TO_BASKET':
+    case 'ADD_TO_BASKET': {
+      const items = addProductToBasket(state.items, action);
       return {
-        items: addProductToBasket(state.items, action),
-        total: calculateTotal(state.items)
+        items,
+        total: calculateTotal(items)
       };
-    case 'REMOVE_FROM_BASKET':
+    }
+    case 'REMOVE_FROM_BASKET': {
+      const items = removeProductFromBasket(state.items, action);
       return {
-        items: removeProductFromBasket(state.items, action),
-        total: calculateTotal(state.items)
+        items,
+        total: calculateTotal(items)
       };
-    case 'INCREASE_QUANTITY':
+    }
+    case 'INCREASE_QUANTITY': {
+      const items = increaseItemQuantity(state.items, action);
       return {
-        items: increaseItemQuantity(state.items, action),
-        total: calculateTotal(state.items)
+        items,
+        total: calculateTotal(items)
       };
-    case 'DECREASE_QUANTITY':
+    }
+    case 'DECREASE_QUANTITY': {
+      const items = decreaseItemQuantitiy(state.items, action);
       return {
-        items: decreaseItemQuantitiy(state.items, action),
-        total: calculateTotal(state.items)
+        items,
+        total: calculateTotal(items)
       };
+    }
     case 'CLEAR_BASKET':
       return { items: [], total: 0 };
     default:
