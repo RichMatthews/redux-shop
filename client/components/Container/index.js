@@ -1,9 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { addToBasket, removeFromBasket, clearBasket, increaseQuantity, decreaseQuantity } from '../actions';
-import { Container } from './styles';
-import Basket from '../Basket';
-import Products from '../Products';
+import { addToBasket, removeFromBasket, clearBasket, increaseQuantity, decreaseQuantity, refineSearch } from '../actions';
+import Main from '../Main';
 
 const mapStateToProps = state => ({
   basket: state.basket,
@@ -25,29 +22,11 @@ const mapDispatchToProps = dispatch => ({
   },
   clearBasket: () => {
     dispatch(clearBasket());
+  },
+  refineSearch: () => {
+    dispatch(refineSearch());
   }
 });
-
-class Main extends React.Component {
-  render() {
-    const { basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity, clearBasket, products } = this.props;
-    return (
-      <Container>
-        <Products
-          addToBasket={addToBasket}
-          products={products}
-        />
-        <Basket
-          basket={basket}
-          removeFromBasket={removeFromBasket}
-          increaseQuantity={increaseQuantity}
-          decreaseQuantity={decreaseQuantity}
-          clearBasket={clearBasket}
-        />
-      </Container>
-    );
-  }
-}
 
 export default connect(
   mapStateToProps,

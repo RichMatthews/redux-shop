@@ -29,3 +29,10 @@ export const decreaseQuantity = (product) => ({
     product
   }
 });
+
+export const refineSearch = (product) => ({
+  type: 'REFINE_SEARCH',
+  data: {
+    product
+  }
+});

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const BasketContainer = styled.div`
   display: flex;
-  width: 500px;
+  width: 300px;
+  height: 300px;
 `;
 export const BasketProducts = styled.div`
   width: 50%;
@@ -15,8 +16,6 @@ export const BasketProduct = styled.div`
   padding: 4px;
 `;
 export const BasketProductImage = styled.div`
-  display: flex;
-  width: 500px;
 `;
 
 export const PriceAndRemove = styled.div`

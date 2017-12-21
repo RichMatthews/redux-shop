@@ -1,7 +1,16 @@
 import React from 'react';
+import { string } from 'prop-types';
 
-const component = ({ image }) => (
-  <img src={image} />
+const Image = ({ image }) => (
+  <img src={image} alt="" width="50px" height="50px" />
 );
 
-export default component;
+Image.propTypes = {
+  image: string
+};
+
+Image.defaultProps = {
+  image: ''
+};
+
+export default Image;

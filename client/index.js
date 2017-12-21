@@ -13,6 +13,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 function listener() {
+  /* eslint-disable no-console */
   console.log(store.getState(), 'store state');
 }
 
