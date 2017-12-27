@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import Basket from './index';
 import { BasketProduct, BasketProducts, BasketProductRemove } from './styles';
 
-describe.only('Basket', () => {
+describe('Basket', () => {
   let wrapper;
   let basket;
   beforeEach(() => {
