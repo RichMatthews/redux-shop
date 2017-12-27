@@ -26,11 +26,11 @@ const Basket = ({
       {basket.items.map((item) => (
         <BasketProduct>
           <BasketProductImage>
-            <Image image={item.product.image} className="basketItemImage"/>
+            <Image image={item.product.image} className="basketItemImage" />
           </BasketProductImage>
           <PriceAndRemove>
             <BasketProductPrice>
-              <span className="basketItemPrice">£{item.quantity * item.product.price}</span>
+              <span className="basketItemPrice">£{item.product.price}</span>
             </BasketProductPrice>
             <BasketProductRemove>
               <button onClick={() => removeFromBasket(item.product)}>X</button>

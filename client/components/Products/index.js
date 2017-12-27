@@ -2,7 +2,6 @@ import React from 'react';
 import { func } from 'prop-types';
 import { ProductContainer,
   Product,
-  Button,
   ProductImage,
   ProductName,
   ProductPrice,
@@ -11,33 +10,39 @@ import { ProductContainer,
 import Price from '../Price';
 import Image from '../Image';
 
+const getProductType = (product) => (product.name === 'Trainers');
 
-const Products = ({ addToBasket, toggleFilter, products }) => (
+const Products = ({ addToBasket, products }) => (
   <div>
-    <Button onClick={() => toggleFilter()}> im btn </Button>
     <ProductContainer>
-      {products.products.map((product) => (
-        <Product>
-          <ProductImage>
-            <Image image={product.image} />
-          </ProductImage>
-          <ProductName>
-            {product.name}
-          </ProductName>
-          <ProductPrice>
-            <Price salePrice={product.salePrice} price={product.price} />
-          </ProductPrice>
-          <AddToBasket>
-            <button onClick={() => addToBasket(product)}>Add To Basket</button>
-          </AddToBasket>
-        </Product>))}
+      {products.map((product) => (
+        <div>
+          {getProductType(product) ?
+            <Product>
+              <ProductImage>
+                <Image image={product.image} />
+              </ProductImage>
+              <ProductName>
+                {product.name}
+              </ProductName>
+              <ProductPrice>
+                <Price salePrice={product.salePrice} price={product.price} />
+              </ProductPrice>
+              <AddToBasket>
+                <button onClick={() => addToBasket(product)}>Add To Basket</button>
+              </AddToBasket>
+            </Product>
+          :
+          null
+        }
+        </div>
+      ))}
     </ProductContainer>
   </div>
 );
 
 Products.propTypes = {
-  addToBasket: func,
-  toggleFilter: func
+  addToBasket: func
 };
 
 Products.defaultProps = {

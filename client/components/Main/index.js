@@ -1,64 +1,56 @@
 import React from 'react';
-import { array, func } from 'prop-types';
-import { Container } from './styles';
+import {
+  HashRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import { Container, Grid, Him, Her } from './styles';
 import Basket from '../Basket';
-import Products from '../Products';
-import Filters from '../Filters';
+import Categories from '../Categories';
 
-export default class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showFilters: true
-    };
-  }
+const HimHerComponent = () => (
+  <Grid>
+    <Him className="him"><Link to="/him/categories">Him</Link></Him>
+    <Her className="her"><Link to="/her">Her</Link></Her>
+  </Grid>
+);
 
-  toggleFilter = () => {
-    this.setState(prevState => ({ showFilters: !prevState.showFilters }));
-  }
-
-  render() {
-    const { basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity, clearBasket, products, refineSearch } = this.props;
-    return (
-      <Container>
-        {this.state.showFilters ?
-          <Filters
-            refineSearch={refineSearch}
+const Main = ({ basket,
+  addToBasket,
+  removeFromBasket,
+  increaseQuantity,
+  decreaseQuantity,
+  clearBasket,
+  products,
+  refineSearch
+}) => (
+  <Router>
+    <Container>
+      <Route
+        path="/basket"
+        render={() => (
+          <Basket
+            basket={basket}
+            removeFromBasket={removeFromBasket}
+            increaseQuantity={increaseQuantity}
+            decreaseQuantity={decreaseQuantity}
+            clearBasket={clearBasket}
           />
-        :
-        null
-      }
-        <Products
-          toggleFilter={this.toggleFilter}
-          addToBasket={addToBasket}
-          products={products}
-        />
-        <Basket
-          basket={basket}
-          removeFromBasket={removeFromBasket}
-          increaseQuantity={increaseQuantity}
-          decreaseQuantity={decreaseQuantity}
-          clearBasket={clearBasket}
-        />
-      </Container>
-    );
-  }
-}
+        )}
+      />
 
-Main.propTypes = {
-  basket: array,
-  removeFromBasket: func,
-  increaseQuantity: func,
-  decreaseQuantity: func,
-  clearBasket: func,
-  refineSearch: func
-};
+      <Route
+        path="/him"
+        render={() => (
+          <Categories
+            products={products}
+            addToBasket={addToBasket}
+          />
+        )}
+      />
+      <Route path="/" exact component={HimHerComponent} />
+    </Container>
+  </Router>
+);
 
-Main.defaultProps = {
-  basket: [],
-  removeFromBasket: null,
-  increaseQuantity: null,
-  decreaseQuantity: null,
-  clearBasket: null,
-  refineSearch: null
-};
+export default Main;
