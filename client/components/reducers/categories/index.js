@@ -43,26 +43,8 @@ const initialState = [{
   }]
 }];
 
-const returnMatchingProducts = (product) => (
-  product.colorTags === 'green'
-);
-
-const includedProducts = (products) => (
-  products.map((product) => {
-    if (returnMatchingProducts(product)) {
-      return { ...product };
-    }
-  }).filter((item) => Boolean(item))
-);
-
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_TO_PRODUCTS':
-      let productState = [].concat(state).concat(action.data);
-      return productState;
-    case 'REFINE_SEARCH':
-      productState = { products: includedProducts(state.products) };
-      return productState;
     default:
       return state;
   }

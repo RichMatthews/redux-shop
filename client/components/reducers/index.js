@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import basket from './basket';
-import products from './products';
+import categories from './categories';
 
 const rootReducer = combineReducers({
   basket,
-  products
+  categories
 });
 
 export default rootReducer;

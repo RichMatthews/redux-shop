@@ -4,15 +4,25 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { Container, Grid, Him, Her } from './styles';
+import {
+  Container,
+  Grid,
+  Him,
+  Her
+} from './styles';
+import OuterContainer from '../../utils/styles/outerContainer/index';
 import Basket from '../Basket';
 import Categories from '../Categories';
+import Header from '../Header';
 
 const HimHerComponent = () => (
-  <Grid>
-    <Him className="him"><Link to="/him/categories">Him</Link></Him>
-    <Her className="her"><Link to="/her">Her</Link></Her>
-  </Grid>
+  <OuterContainer>
+    <Header />
+    <Grid>
+      <Link to="/him/categories"><Him className="him">Him</Him></Link>
+      <Link to="/her/categories"><Her className="her">Her</Her></Link>
+    </Grid>
+  </OuterContainer>
 );
 
 const Main = ({ basket,
@@ -21,11 +31,12 @@ const Main = ({ basket,
   increaseQuantity,
   decreaseQuantity,
   clearBasket,
-  products,
+  categories,
   refineSearch
 }) => (
   <Router>
     <Container>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <Route
         path="/basket"
         render={() => (
@@ -43,7 +54,7 @@ const Main = ({ basket,
         path="/him"
         render={() => (
           <Categories
-            products={products}
+            categories={categories}
             addToBasket={addToBasket}
           />
         )}

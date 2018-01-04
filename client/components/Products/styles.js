@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProductContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
   width: 700px;
@@ -12,17 +12,15 @@ export const Button = styled.button`
 
 export const Product = styled.div`
   background-color: white;
-  width: 30%;
-  height: 200px;
-  margin: 2px;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
 `;
 
 export const ProductImage = styled.div`
-  width: 50px;
-  height: 50px;
 `;
 
-export const ProductName = styled.div`
+export const Name = styled.div`
   display: flex;
   width: 500px;
 `;

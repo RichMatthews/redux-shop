@@ -4,7 +4,7 @@ import Main from '../Main';
 
 const mapStateToProps = state => ({
   basket: state.basket,
-  products: state.products
+  categories: state.categories
 });
 
 const mapDispatchToProps = dispatch => ({

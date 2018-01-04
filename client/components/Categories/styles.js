@@ -1,13 +1,40 @@
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
-export const CategoryContainer = styled.div`
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
-  margin: 4px;
+import {
+  Link
+} from 'react-router-dom';
+
+injectGlobal`
+  body {
+    margin: 0;
+  }
 `;
 
 export const Container = styled.div`
   display: flex;
-  width: 700px;
+  width: 1000px;
+  height: 500px;
+  margin-top: 5px;
+`;
+
+export const CategoryContainer = styled.div`
+  height: 300px;
+  width: 33%;
+  margin-right: 10px;
+`;
+
+export const CategoryLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+export const CategoryImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const CategoryName = styled.div`
+  text-align: center;
 `;
