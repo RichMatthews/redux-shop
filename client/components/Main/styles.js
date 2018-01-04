@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body {
+    margin: 0;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -9,6 +15,7 @@ export const Container = styled.div`
 
 export const Grid = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
 export const Him = styled.div`

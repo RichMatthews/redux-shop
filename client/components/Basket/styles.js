@@ -1,8 +1,12 @@
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body {
+    margin: 0;
+  }
+`;
 
 export const BasketContainer = styled.div`
-  display: flex;
-  width: 300px;
   height: 300px;
 `;
 export const BasketProducts = styled.div`
