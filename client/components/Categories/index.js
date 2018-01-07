@@ -1,9 +1,13 @@
-import React from 'react';
 import { func } from 'prop-types';
 import {
   Route,
   Switch
 } from 'react-router-dom';
+
+import OuterContainer from 'utils/styles/outerContainer/index';
+import Header from 'components/Header';
+import Products from 'components/Products';
+import Image from 'components/Image';
 import {
   Container,
   CategoryContainer,
@@ -11,10 +15,6 @@ import {
   CategoryImage,
   CategoryName
 } from './styles';
-import OuterContainer from '../../utils/styles/outerContainer/index';
-import Header from '../Header';
-import Products from '../Products';
-import Image from '../Image';
 
 const noMatch = () => <div>404 --- Page Not Found </div>;
 
@@ -22,7 +22,7 @@ const CategoriesComponent = ({ categories }) => (
   <Container>
     {categories.map((category) => (
       <CategoryContainer key={category.id}>
-        <CategoryLink to={`${category.name.toLowerCase()}`}>
+        <CategoryLink to={`categories/${category.name.toLowerCase()}`}>
           <CategoryImage>
             <Image image={category.products[0].image} />
           </CategoryImage>
@@ -38,30 +38,29 @@ const CategoriesComponent = ({ categories }) => (
 const component = ({ categories, addToBasket }) => (
   <OuterContainer>
     <Header />
-    <Container>
-      <Switch>
-        {categories.map((category) => (
-          <Route
-            path={`/him/${category.name}`}
-            render={() => (
-              <Products
-                key={category.id}
-                products={categories.find(cat => cat.name === category.name).products}
-                addToBasket={addToBasket}
-              />
-            )}
-          />))}
+    <Switch>
+      {categories.map((category) => (
         <Route
-          path="/him/categories"
+          key={category.id}
+          path={`/him/categories/${category.name}`}
           render={() => (
-            <CategoriesComponent
-              categories={categories}
+            <Products
+              key={category.id}
+              products={categories.find(cat => cat.name === category.name).products}
+              addToBasket={addToBasket}
             />
           )}
-        />
-        <Route component={noMatch} />
-      </Switch>
-    </Container>
+        />))}
+      <Route
+        path="/him/categories"
+        render={() => (
+          <CategoriesComponent
+            categories={categories}
+          />
+        )}
+      />
+      <Route component={noMatch} />
+    </Switch>
   </OuterContainer>
 );
 

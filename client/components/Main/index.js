@@ -1,26 +1,29 @@
-import React from 'react';
 import {
   HashRouter as Router,
   Route,
-  Link
+  Redirect
 } from 'react-router-dom';
+
+import OuterContainer from 'utils/styles/outerContainer/index';
+import Basket from 'components/Basket';
+import Categories from 'components/Categories';
+import Header from 'components/Header';
+
 import {
   Container,
   Grid,
   Him,
-  Her
+  Her,
+  HimLink,
+  HerLink
 } from './styles';
-import OuterContainer from '../../utils/styles/outerContainer/index';
-import Basket from '../Basket';
-import Categories from '../Categories';
-import Header from '../Header';
 
 const HimHerComponent = () => (
   <OuterContainer>
     <Header />
     <Grid>
-      <Link to="/him/categories"><Him className="him">Him</Him></Link>
-      <Link to="/her/categories"><Her className="her">Her</Her></Link>
+      <HimLink to="/him/categories"><Him className="him">Him</Him></HimLink>
+      <HerLink to="/her/categories"><Her className="her">Her</Her></HerLink>
     </Grid>
   </OuterContainer>
 );
@@ -60,6 +63,15 @@ const Main = ({ basket,
         )}
       />
       <Route path="/" exact component={HimHerComponent} />
+      <Route
+        exact
+        path="/him"
+        render={() => (
+          <Redirect
+            to="/him/categories"
+          />
+        )}
+      />
     </Container>
   </Router>
 );

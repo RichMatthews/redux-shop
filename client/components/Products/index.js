@@ -1,5 +1,6 @@
-import React from 'react';
 import { func } from 'prop-types';
+import Price from 'components/Price';
+import Image from 'components/Image';
 import { Container,
   Product,
   ProductImage,
@@ -7,8 +8,6 @@ import { Container,
   ProductPrice,
   AddToBasket
 } from './styles';
-import Price from '../Price';
-import Image from '../Image';
 
 const Products = ({ addToBasket, products }) => (
   <Container>

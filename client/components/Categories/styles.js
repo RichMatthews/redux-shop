@@ -12,15 +12,25 @@ injectGlobal`
 
 export const Container = styled.div`
   display: flex;
-  width: 1000px;
+  flex-wrap: wrap;
+  width: 95%;
   height: 500px;
-  margin-top: 5px;
+  margin: 30px;
+  justify-content: center;
 `;
+
+const calculateWidth = (height, width) => {
+  const newWidth = (height * width) / 990;
+  return newWidth;
+};
+
+const height = document.body.clientWidth;
+const width = document.body.clientWidth;
 
 export const CategoryContainer = styled.div`
   height: 300px;
-  width: 33%;
-  margin-right: 10px;
+  min-width: 30%;
+  margin-bottom: 50px;
 `;
 
 export const CategoryLink = styled(Link)`

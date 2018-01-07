@@ -1,17 +1,18 @@
 import styled, { injectGlobal } from 'styled-components';
 
-injectGlobal`
+injectGlobal(`
   body {
     margin: 0;
   }
-`;
+`);
 
 export const BasketContainer = styled.div`
   height: 300px;
+  display: flex;
 `;
 export const BasketProducts = styled.div`
-  width: 50%;
-  margin: 5px;
+  width: 70%;
+  margin: 40px;
   background-color: white;
 `;
 export const BasketProduct = styled.div`
@@ -39,7 +40,12 @@ export const BasketProductQuantity = styled.div`
 
 `;
 export const Total = styled.div`
-  width: 50%;
-  margin: 5px;
+  width: 30%;
+  margin: 40px;
   background-color: white;
+`;
+
+export const EmptyBasket = styled.div`
+  display: flex;
+  justify-content: center;
 `;

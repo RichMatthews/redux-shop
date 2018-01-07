@@ -18,7 +18,12 @@
     "window": true,
     "document": true,
     "expect": true,
-    "shallow": true
+    "shallow": true,
+    "ReactDOM": true,
+    "React": true
+  },
+  "settings": {
+    "import/resolver": "webpack"
   },
   "rules": {
     "default-case": 0,

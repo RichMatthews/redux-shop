@@ -1,14 +1,10 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
-import sinon from 'sinon';
 import Products from './index';
-import {  } from './styles';
 
 describe.only('product', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Products products={products}/>);
+    wrapper = shallow(<Products products={products} />);
   });
   it('renders a product', () => {
 
