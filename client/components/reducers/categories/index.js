@@ -1,43 +1,91 @@
 const initialState = [{
-  categoryId: 1,
+  categoryId: 10000,
   name: 'Trainers',
   products: [{
+    id: 10000,
     name: 'Nike Trainers',
     price: '175.00',
     salePrice: '70.00',
-    id: 3,
-    image: '/images/nikes.png',
+    image: '/images/nikey.jpeg',
     colorTags: 'green'
   },
   {
+    id: 10001,
     name: 'NB Trainers',
     price: '150.00',
     salePrice: '70.00',
-    id: 4,
-    image: '/images/nbs.jpg',
+    image: '/images/painting.jpg',
+    colorTags: 'green'
+  },
+  {
+    id: 10002,
+    name: 'NB Trainers',
+    price: '150.00',
+    salePrice: '70.00',
+    image: '/images/painting.jpg',
+    colorTags: 'green'
+  },
+  {
+    id: 10003,
+    name: 'NB Trainers',
+    price: '150.00',
+    salePrice: '70.00',
+    image: '/images/painting.jpg',
+    colorTags: 'green'
+  },
+  {
+    id: 10004,
+    name: 'NB Trainers',
+    price: '150.00',
+    salePrice: '70.00',
+    image: '/images/painting.jpg',
     colorTags: 'green'
   }]
 },
 {
-  categoryId: 2,
+  categoryId: 10001,
   name: 'Rucksacks',
   products: [{
     name: 'Rucksack',
     price: '15.00',
     salePrice: '7.00',
-    id: 1,
-    image: '/images/rucksack.jpg',
+    id: 10000,
+    image: '/images/painting.jpg',
     colorTags: 'green'
   }]
 },
 {
-  categoryId: 3,
+  categoryId: 10002,
   name: 'Paintings',
   products: [{
     name: 'Painting',
     price: '79.00',
     salePrice: '40.00',
-    id: 2,
+    id: 10000,
+    image: '/images/painting.jpg',
+    colorTags: 'black'
+  }]
+},
+{
+  categoryId: 10003,
+  name: 'Hoodies and Sweatshirts',
+  products: [{
+    name: 'Sweatshirt 1',
+    price: '90.00',
+    salePrice: '40.00',
+    id: 10000,
+    image: '/images/painting.jpg',
+    colorTags: 'black'
+  }]
+},
+{
+  categoryId: 10004,
+  name: 'Jeans',
+  products: [{
+    name: 'Jeans One',
+    price: '80',
+    salePrice: '40.00',
+    id: 10000,
     image: '/images/painting.jpg',
     colorTags: 'black'
   }]

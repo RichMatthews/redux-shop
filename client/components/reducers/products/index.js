@@ -56,9 +56,10 @@ const includedProducts = (products) => (
 );
 
 export default (state = initialState, action) => {
+  let productState;
   switch (action.type) {
     case 'ADD_TO_PRODUCTS':
-      let productState = [].concat(state).concat(action.data);
+      productState = [].concat(state).concat(action.data);
       return productState;
     case 'REFINE_SEARCH':
       productState = { products: includedProducts(state.products) };
