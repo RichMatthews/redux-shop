@@ -7,7 +7,8 @@ const initialState = [{
     price: '175.00',
     salePrice: '70.00',
     image: '/images/nikey.jpeg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   },
   {
     id: 10001,
@@ -15,7 +16,8 @@ const initialState = [{
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   },
   {
     id: 10002,
@@ -23,7 +25,8 @@ const initialState = [{
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   },
   {
     id: 10003,
@@ -31,7 +34,8 @@ const initialState = [{
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   },
   {
     id: 10004,
@@ -39,7 +43,8 @@ const initialState = [{
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   }]
 },
 {
@@ -51,7 +56,8 @@ const initialState = [{
     salePrice: '7.00',
     id: 10000,
     image: '/images/painting.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'rucksacks'
   }]
 },
 {
@@ -63,7 +69,8 @@ const initialState = [{
     salePrice: '40.00',
     id: 10000,
     image: '/images/painting.jpg',
-    colorTags: 'black'
+    colorTags: 'black',
+    category: 'paintings'
   }]
 },
 {
@@ -75,7 +82,8 @@ const initialState = [{
     salePrice: '40.00',
     id: 10000,
     image: '/images/painting.jpg',
-    colorTags: 'black'
+    colorTags: 'black',
+    category: 'hoodies'
   }]
 },
 {
@@ -87,7 +95,8 @@ const initialState = [{
     salePrice: '40.00',
     id: 10000,
     image: '/images/painting.jpg',
-    colorTags: 'black'
+    colorTags: 'black',
+    category: 'jeans'
   }]
 }];
 

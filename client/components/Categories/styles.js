@@ -19,14 +19,6 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-const calculateWidth = (height, width) => {
-  const newWidth = (height * width) / 990;
-  return newWidth;
-};
-
-const height = document.body.clientWidth;
-const width = document.body.clientWidth;
-
 export const CategoryContainer = styled.div`
   height: 300px;
   min-width: 30%;
