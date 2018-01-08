@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import Products from './index';
 
-describe.only('product', () => {
+describe('product', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<Products products={products} />);

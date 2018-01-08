@@ -110,7 +110,10 @@ describe('Basket', () => {
     });
   });
   describe('clearing the basket', () => {
-    it('renders a clear basket button', () => {
+    it('renders a clear basket button if the basket is not empty', () => {
+      basket = {
+        items: [{ product: { image: '' }, quantity: 1 }]
+      };
       wrapper = shallow(<Basket basket={basket} />);
       expect(wrapper.find('button').exists()).to.equal(true);
     });
