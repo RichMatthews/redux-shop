@@ -8,6 +8,7 @@ import OuterContainer from 'utils/styles/outerContainer/index';
 import Header from 'components/Header';
 import Products from 'components/Products';
 import Image from 'components/Image';
+import NoMatch from 'components/NoMatch';
 import {
   Container,
   CategoryContainer,
@@ -15,8 +16,6 @@ import {
   CategoryImage,
   CategoryName
 } from './styles';
-
-const noMatch = () => <div>404 --- Page Not Found </div>;
 
 const CategoriesComponent = ({ categories }) => (
   <Container>
@@ -59,7 +58,7 @@ const component = ({ categories, addToBasket }) => (
           />
         )}
       />
-      <Route component={noMatch} />
+      <Route component={NoMatch} />
     </Switch>
   </OuterContainer>
 );

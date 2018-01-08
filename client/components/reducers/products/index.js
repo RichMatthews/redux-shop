@@ -7,7 +7,8 @@ const initialState = [{
     salePrice: '70.00',
     id: 3,
     image: '/images/nikes.png',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   },
   {
     name: 'NB Trainers',
@@ -15,7 +16,8 @@ const initialState = [{
     salePrice: '70.00',
     id: 4,
     image: '/images/nbs.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   }]
 },
 {
@@ -27,7 +29,8 @@ const initialState = [{
     salePrice: '7.00',
     id: 1,
     image: '/images/rucksack.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'rucksacks'
   }]
 },
 {
@@ -39,7 +42,8 @@ const initialState = [{
     salePrice: '40.00',
     id: 2,
     image: '/images/painting.jpg',
-    colorTags: 'black'
+    colorTags: 'black',
+    category: 'paintings'
   }]
 }];
 

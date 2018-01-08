@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+import {
+  Link
+} from 'react-router-dom';
+
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -25,11 +29,13 @@ export const ProductImage = styled.div`
 export const Name = styled.div`
 `;
 
+export const ProductLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
 export const ProductPrice = styled.div`
   color: red;
   font-size: 20px;
   font-weight: bold;
-`;
-
-export const AddToBasket = styled.div`
 `;
