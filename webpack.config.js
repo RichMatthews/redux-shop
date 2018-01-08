@@ -7,18 +7,12 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'index.js'
   },
-  resolve: {
-    root: [
-      path.resolve('./client')
-    ]
-  },
   devServer: {
     inline: true,
     port: 3333
   },
   plugins: [
     new webpack.ProvidePlugin({
-      React: 'react',
       ReactDOM: 'react-dom'
     })
   ],

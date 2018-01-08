@@ -22,10 +22,10 @@ const CategoriesComponent = ({ categories }) => (
     {categories.map((category) => (
       <CategoryContainer key={category.id}>
         <CategoryLink to={`categories/${category.name.toLowerCase()}`}>
-          <CategoryImage>
+          <CategoryImage className="categoryImage">
             <Image image={category.products[0].image} />
           </CategoryImage>
-          <CategoryName>
+          <CategoryName className="categoryName">
             {`${category.name}`}
           </CategoryName>
         </CategoryLink>

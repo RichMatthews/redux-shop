@@ -8,6 +8,7 @@ import OuterContainer from 'utils/styles/outerContainer/index';
 import Basket from 'components/Basket';
 import Categories from 'components/Categories';
 import Header from 'components/Header';
+import NoMatch from 'components/NoMatch';
 
 import {
   Container,
