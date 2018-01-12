@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body {
+    margin: 0;
+  }
+`;
 
 import {
   Link
@@ -18,12 +24,15 @@ export const Button = styled.button`
 
 export const Product = styled.div`
   height: 300px;
-  width: 22%;
-  margin-bottom: 100px;
-  margin: 15px;
+  min-width: 30%;
+  margin-bottom: 50px;
 `;
 
 export const ProductImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const Name = styled.div`

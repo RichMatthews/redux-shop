@@ -17,10 +17,11 @@ import { Container,
 
 const ProductsComponent = ({ addToBasket, products }) => (
   <Container>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {products.map((product) => (
       <Product key={product.id} >
         <ProductLink to={`${product.category}/${product.id}`}>
-          <ProductImage>
+          <ProductImage className="productImage">
             <Image image={product.image} />
           </ProductImage>
           <Name>

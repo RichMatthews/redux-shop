@@ -9,7 +9,7 @@ const component = () => (
   <Container>
     <HeaderItems>
       {headerItems.map((item) => (
-        <HeaderItem>
+        <HeaderItem className={`${item.name}`}>
           <HeaderItemLink
             to={`${item.path}`}
             exact

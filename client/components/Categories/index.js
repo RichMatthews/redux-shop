@@ -19,6 +19,7 @@ import {
 
 const CategoriesComponent = ({ categories }) => (
   <Container>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {categories.map((category) => (
       <CategoryContainer key={category.id}>
         <CategoryLink to={`categories/${category.name.toLowerCase()}`}>

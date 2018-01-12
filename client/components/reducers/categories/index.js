@@ -6,7 +6,7 @@ const initialState = [{
     name: 'Nike Trainers',
     price: '175.00',
     salePrice: '70.00',
-    image: '/images/nikey.jpeg',
+    image: '/images/painting.jpg',
     colorTags: 'green',
     category: 'trainers'
   },
@@ -21,7 +21,7 @@ const initialState = [{
   },
   {
     id: 10002,
-    name: 'NB Trainers',
+    name: 'Adidas Trainers',
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
@@ -30,7 +30,7 @@ const initialState = [{
   },
   {
     id: 10003,
-    name: 'NB Trainers',
+    name: 'Fila Trainers',
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
@@ -39,7 +39,7 @@ const initialState = [{
   },
   {
     id: 10004,
-    name: 'NB Trainers',
+    name: 'Diadora Trainers',
     price: '150.00',
     salePrice: '70.00',
     image: '/images/painting.jpg',
@@ -54,7 +54,7 @@ const initialState = [{
     name: 'Rucksack',
     price: '15.00',
     salePrice: '7.00',
-    id: 10000,
+    id: 1000089,
     image: '/images/painting.jpg',
     colorTags: 'green',
     category: 'rucksacks'
