@@ -13,16 +13,17 @@ injectGlobal`
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
+  justify-content: center;
+  width: 100%;
   height: 500px;
   margin: 30px;
-  justify-content: center;
 `;
 
 export const CategoryContainer = styled.div`
   height: 300px;
   min-width: 30%;
   margin-bottom: 50px;
+  margin-right: 2%;
 `;
 
 export const CategoryLink = styled(Link)`

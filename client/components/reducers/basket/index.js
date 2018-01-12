@@ -3,16 +3,15 @@ const initialState = {
   total: 0
 };
 
-const isProductInBasket = (items, action) => (
+const isProductInBasket = (items, action) => {
   items.some((basketItem) => (
     basketItem.product.id === action.data.product.id
-  ))
-);
+  ));
+};
 
 const calculateTotal = (items) => {
   return items.reduce((totalPrice, basketItem) => {
-    const price = basketItem.product.price;
-    const quantity = basketItem.quantity;
+    const { product: { price }, quantity } = basketItem;
     const total = price * quantity;
     return totalPrice + total;
   }, 0);

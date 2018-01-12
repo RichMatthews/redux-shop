@@ -30,7 +30,7 @@ const Basket = ({
         <BasketProducts>
           <h1>Basket</h1>
           {basket.items.map((item) => (
-            <BasketProduct>
+            <BasketProduct className="basketProduct">
               <BasketProductImage>
                 <Image image={item.product.image} className="basketItemImage" />
               </BasketProductImage>
@@ -46,7 +46,7 @@ const Basket = ({
                 <p className="basketItemName">{item.product.name}</p>
               </BasketProductName>
               <BasketProductQuantity>
-                <span className="basketItemQuantity">Qty {item.quantity}</span>
+                <span className="basketItemQuantity">Qty <span className="quantity">{item.quantity}</span></span>
                 <span><button onClick={() => increaseQuantity(item)} className="quantityIncrease">+</button></span>
                 <span><button onClick={() => decreaseQuantity(item)} className="quantityDecrease">-</button></span>
               </BasketProductQuantity>

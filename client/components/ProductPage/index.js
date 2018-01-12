@@ -7,7 +7,7 @@ const component = ({ product, addToBasket }) => (
   <ProductContainer>
     {product.name}
     <AddToBasket>
-      <button onClick={() => addToBasket(product)}>Add To Basket</button>
+      <button className="addToBasket" onClick={() => addToBasket(product)}>Add To Basket</button>
     </AddToBasket>
   </ProductContainer>
 );
