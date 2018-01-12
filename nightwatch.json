@@ -1,0 +1,68 @@
+{
+  "src_folders": [
+    "./tests"
+  ],
+  "selenium": {
+    "start_process": true,
+    "server_path": "./node_modules/selenium-server/lib/runner/selenium-server-standalone-3.8.1.jar",
+    "host": "127.0.0.1",
+    "port": 4445,
+    "cli_args": {
+      "webdriver.chrome.driver": "./node_modules/chromedriver/lib/chromedriver/chromedriver",
+      "webdriver.ie.driver": ""
+    }
+  },
+  "test_runner": "mocha",
+  "test_settings": {
+    "default": {
+      "launch_url": "http://travis.dev",
+      "selenium_port": 4445,
+      "selenium_host": "localhost",
+      "silent": true,
+      "sync_test_names": true,
+      "screenshots": {
+        "enabled": false,
+        "path": ""
+      },
+      "desiredCapabilities": {
+        "marionette": false
+      },
+      "globals": {
+        "waitForConditionTimeout": 60000,
+        "asyncHookTimeout": 60000,
+        "syncModeBrowserList": [
+          "safari:10",
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    "safari": {
+      "desiredCapabilities": {
+        "browserName": "safari"
+      }
+    },
+    "chrome": {
+      "desiredCapabilities": {
+        "browserName": "chrome"
+      }
+    },
+    "invisiblechrome": {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": [
+            "--headless"
+          ]
+        }
+      }
+    },
+    "browserstack": {
+      "selenium_host": "hub-cloud.browserstack.com",
+      "selenium_port": 80,
+      "selenium": {
+        "start_process": false
+      }
+    }
+  }
+}
