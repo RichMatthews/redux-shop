@@ -1,27 +1,14 @@
-const initialState = {
+const initialState = [{
+  categoryId: 1,
+  name: 'Trainers',
   products: [{
-    name: 'Rucksack',
-    price: '15.00',
-    salePrice: '7.00',
-    id: 1,
-    image: '/images/rucksack.jpg',
-    colorTags: 'green'
-  },
-  {
-    name: 'Painting',
-    price: '79.00',
-    salePrice: '40.00',
-    id: 2,
-    image: '/images/painting.jpg',
-    colorTags: 'black'
-  },
-  {
     name: 'Nike Trainers',
     price: '175.00',
     salePrice: '70.00',
     id: 3,
-    image: '/images/nikes.jpg',
-    colorTags: 'green'
+    image: '/images/nikes.png',
+    colorTags: 'green',
+    category: 'trainers'
   },
   {
     name: 'NB Trainers',
@@ -29,9 +16,36 @@ const initialState = {
     salePrice: '70.00',
     id: 4,
     image: '/images/nbs.jpg',
-    colorTags: 'green'
+    colorTags: 'green',
+    category: 'trainers'
   }]
-};
+},
+{
+  categoryId: 2,
+  name: 'Rucksacks',
+  products: [{
+    name: 'Rucksack',
+    price: '15.00',
+    salePrice: '7.00',
+    id: 1,
+    image: '/images/rucksack.jpg',
+    colorTags: 'green',
+    category: 'rucksacks'
+  }]
+},
+{
+  categoryId: 3,
+  name: 'Paintings',
+  products: [{
+    name: 'Painting',
+    price: '79.00',
+    salePrice: '40.00',
+    id: 2,
+    image: '/images/painting.jpg',
+    colorTags: 'black',
+    category: 'paintings'
+  }]
+}];
 
 const returnMatchingProducts = (product) => (
   product.colorTags === 'green'
@@ -46,9 +60,10 @@ const includedProducts = (products) => (
 );
 
 export default (state = initialState, action) => {
+  let productState;
   switch (action.type) {
     case 'ADD_TO_PRODUCTS':
-      let productState = [].concat(state).concat(action.data);
+      productState = [].concat(state).concat(action.data);
       return productState;
     case 'REFINE_SEARCH':
       productState = { products: includedProducts(state.products) };

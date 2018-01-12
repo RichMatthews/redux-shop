@@ -1,9 +1,21 @@
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
-export const ProductContainer = styled.div`
+injectGlobal`
+  body {
+    margin: 0;
+  }
+`;
+
+import {
+  Link
+} from 'react-router-dom';
+
+export const Container = styled.div`
   display: flex;
-  flex-flow: row wrap;
-  width: 700px;
+  flex-wrap: wrap;
+  width: 95%;
+  height: 500px;
+  margin: 30px;
 `;
 
 export const Button = styled.button`
@@ -11,27 +23,28 @@ export const Button = styled.button`
 `;
 
 export const Product = styled.div`
-  background-color: white;
-  width: 30%;
-  height: 200px;
-  margin: 2px;
+  height: 300px;
+  min-width: 30%;
+  margin-bottom: 50px;
 `;
 
 export const ProductImage = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
-export const ProductName = styled.div`
-  display: flex;
-  width: 500px;
+export const Name = styled.div`
+`;
+
+export const ProductLink = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;
 
 export const ProductPrice = styled.div`
   color: red;
   font-size: 20px;
   font-weight: bold;
-`;
-
-export const AddToBasket = styled.div`
 `;

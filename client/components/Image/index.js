@@ -1,8 +1,8 @@
-import React from 'react';
 import { string } from 'prop-types';
+import { Container } from './styles';
 
 const Image = ({ image }) => (
-  <img src={image} alt="" width="50px" height="50px" />
+  <Container src={image} alt="" />
 );
 
 Image.propTypes = {
