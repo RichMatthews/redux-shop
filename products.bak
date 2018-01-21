@@ -1,0 +1,16 @@
+<Product key={product.id} >
+  <ProductLink to={`${product.category}/${product.id}`}>
+    <ProductImage className="productImage">
+      <Image image={product.image} />
+    </ProductImage>
+    <Name>
+      {product.name.S}
+    </Name>
+    <ProductPrice>
+      <Price salePrice={product.salePrice} price={product.price} />
+    </ProductPrice>
+  </ProductLink>
+</Product>
+:
+'Loading ...'
+))}

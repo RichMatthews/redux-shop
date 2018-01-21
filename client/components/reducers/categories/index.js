@@ -6,7 +6,7 @@ const initialState = [{
     name: 'Nike Trainers',
     price: '175.00',
     salePrice: '70.00',
-    image: '/images/painting.jpg',
+    image: '/images/nikey.jpeg',
     colorTags: 'green',
     category: 'trainers'
   },

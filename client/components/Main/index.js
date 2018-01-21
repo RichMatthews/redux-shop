@@ -62,7 +62,11 @@ const Main = ({ basket,
           />
         )}
       />
-      <Route path="/" exact component={HimHerComponent} />
+      <Route
+        exact
+        path="/"
+        component={HimHerComponent}
+      />
       <Route
         exact
         path="/him"

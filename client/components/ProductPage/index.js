@@ -5,7 +5,7 @@ import {
 
 const component = ({ product, addToBasket }) => (
   <ProductContainer>
-    {product.name}
+    {product.name.S}
     <AddToBasket>
       <button className="addToBasket" onClick={() => addToBasket(product)}>Add To Basket</button>
     </AddToBasket>

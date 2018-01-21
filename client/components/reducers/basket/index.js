@@ -3,19 +3,19 @@ const initialState = {
   total: 0
 };
 
-const isProductInBasket = (items, action) => {
+const isProductInBasket = (items, action) => (
   items.some((basketItem) => (
     basketItem.product.id === action.data.product.id
-  ));
-};
+  ))
+);
 
-const calculateTotal = (items) => {
-  return items.reduce((totalPrice, basketItem) => {
+const calculateTotal = (items) => (
+  items.reduce((totalPrice, basketItem) => {
     const { product: { price }, quantity } = basketItem;
     const total = price * quantity;
     return totalPrice + total;
-  }, 0);
-};
+  }, 0)
+);
 
 const addProductToBasket = (items, action) => {
   if (isProductInBasket(items, action)) {
@@ -26,7 +26,6 @@ const addProductToBasket = (items, action) => {
       return product;
     });
   }
-
   const basketState = [].concat(items).concat({ ...action.data, quantity: 1 });
   return basketState;
 };
@@ -42,6 +41,7 @@ const removeProductFromBasket = (items, action) => {
       return product;
     }).filter((p) => Boolean(p));
   }
+  return null;
 };
 
 const increaseItemQuantity = (items, action) => items.map((product) => {
@@ -92,8 +92,9 @@ export default (state = initialState, action) => {
         total: calculateTotal(items)
       };
     }
-    case 'CLEAR_BASKET':
+    case 'CLEAR_BASKET': {
       return { items: [], total: 0 };
+    }
     default:
       return state;
   }

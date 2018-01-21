@@ -1,9 +1,8 @@
+import 'aws-sdk/dist/aws-sdk';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './components/reducers';
 import Container from './components/Container';
-
-import './index.scss';
 
 const store = createStore(
   reducer, /* preloadedState, */
@@ -22,6 +21,10 @@ class Component extends React.Component {
     this.state = {
 
     };
+  }
+
+  componentDidMount = () => {
+
   }
 
   render() {

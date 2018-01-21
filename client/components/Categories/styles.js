@@ -21,9 +21,9 @@ export const Container = styled.div`
 
 export const CategoryContainer = styled.div`
   height: 300px;
-  min-width: 30%;
+  margin-right: 5%;
   margin-bottom: 50px;
-  margin-right: 2%;
+  width: 300px;
 `;
 
 export const CategoryLink = styled(Link)`
@@ -32,10 +32,8 @@ export const CategoryLink = styled(Link)`
 `;
 
 export const CategoryImage = styled.div`
-  width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  min-width: 100%;
 `;
 
 export const CategoryName = styled.div`

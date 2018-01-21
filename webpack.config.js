@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  entry: './main.js',
+  entry: ['babel-polyfill', './main.js'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'index.js'
@@ -29,6 +30,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.json$/,
+        loaders: ['json-loader']
       }
     ]
   }

@@ -27,7 +27,7 @@ const Basket = ({
     <Header />
     {basket.items.length > 0 ?
       <BasketContainer>
-        <BasketProducts>
+        <BasketProducts className="basketProducts">
           <h1>Basket</h1>
           {basket.items.map((item) => (
             <BasketProduct className="basketProduct">
